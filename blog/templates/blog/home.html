@@ -12,8 +12,8 @@
         <a class="mr-2" href="#">{{ post.author }}</a>
         <small class="text-muted">{{ post.date_posted|date:"M d, Y" }}</small>
       </div>
-      <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
-      <p class="article-content">{{ post.content }}</p>
+      <h2><a class="article-title" href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+      <p class="article-content">{{ post.content|truncatewords:10 }}</p>
     </div>
   </article>
 {% endfor %}
